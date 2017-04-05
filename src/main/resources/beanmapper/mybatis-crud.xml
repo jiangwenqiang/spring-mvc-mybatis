@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis.sql">	
+    <select id="select" parameterType="String" resultType="MapCase">
+    	${value}
+	</select>
+
+    <insert id="insert" parameterType="String">
+    	${value}
+	</insert>
+	
+	<update id="update" parameterType="String">
+    	${value}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+    	${value}
+	</delete>
+	
+	<!-- 取数据库UTC时间 -->
+	<select id="select_UNIX_TIMESTAMP" parameterType="Map" resultType="MapCase">
+		select UNIX_TIMESTAMP() as utctime from dual 
+	</select>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <!-- 忽略KEY大小写的MAP -->	
+  <typeAliases>
+    <typeAlias type="org.elnino.demo.HashMapCase" alias="MapCase" />
+  </typeAliases>
+  
+  <!-- ORACLE WE8ISO8859P1字符集转换
+  <typeHandlers>
+    <typeHandler javaType="java.lang.String" jdbcType="VARCHAR" handler="com.efuture.omd.storage.mybatis.ISO8859String"/>
+    <typeHandler javaType="java.lang.String" jdbcType="CHAR" handler="com.efuture.omd.storage.mybatis.ISO8859String"/>
+  </typeHandlers> 
+  -->
+  
+  <!-- 基于方言的数据库级分页
+  <plugins>
+	<plugin interceptor="com.efuture.omd.storage.mybatis.DiclectStatementHandlerInterceptor" />
+	<plugin interceptor="com.efuture.omd.storage.mybatis.DiclectResultSetHandlerInterceptor" />
+  </plugins>
+  <plugins>
+    <plugin interceptor="com.github.pagehelper.PageHelper">
+        <property name="offsetAsPageNum" value="false"/>
+        <property name="rowBoundsWithCount" value="true"/>
+        <property name="pageSizeZero" value="false"/>
+    </plugin>
+    <plugin interceptor="com.efuture.ocp.common.filter.ExecutorWrapper">
+    	<property name="dbType" value="mysql"/>
+    </plugin>
+  </plugins>
+  -->
+  
+  <mappers>
+    <mapper resource="beanmapper/mybatis-crud.xml"/>
+  </mappers>
+</configuration>
